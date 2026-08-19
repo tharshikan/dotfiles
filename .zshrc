@@ -4,6 +4,7 @@
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
 #bindkey
 # function open_chrome() {
 #     open -a "Google Chrome"
@@ -18,15 +19,27 @@
 # bindkey '^A' open_chrome_canary
 # bindkey '^G' open_chrome
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/tharshikanshan/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source ~/.repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# Angular CLI autocompletion, cached to avoid booting node on every shell.
+# Regenerate after upgrading @angular/cli: ng completion script > ~/.config/ng-completion.zsh
+[ -f ~/.config/ng-completion.zsh ] && source ~/.config/ng-completion.zsh
 
 # Autocompletion
 zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 6 )) )'
 
+# Secrets live outside the dotfiles repo.
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
 eval "$(starship init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tharshikanshan/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tharshikanshan/Documents/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tharshikanshan/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tharshikanshan/Documents/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Added by Antigravity
+export PATH="/Users/tharshikanshan/.antigravity/antigravity/bin:$PATH"
