@@ -49,8 +49,8 @@
 # resize-overlay-duration = 4s 200ms
 
 # Light mode theme
-# Theme — follows macOS light/dark mode
-theme = light:Bluloco Light,dark:Bluloco Dark
+# Theme — Flexoki to match kitty, follows macOS light/dark mode
+theme = light:Flexoki Light,dark:Flexoki Dark
 
 # Font
 font-family = SFMono Nerd Font
@@ -70,6 +70,10 @@ cursor-style = block
 cursor-style-blink = false
 window-save-state = always
 minimum-contrast = 1.1
+# Dim inactive splits so the active pane is obvious
+unfocused-split-opacity = 0.92
+window-colorspace = display-p3
+bold-is-bright = false
 
 # Workflow
 copy-on-select = clipboard
