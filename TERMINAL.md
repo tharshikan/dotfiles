@@ -78,6 +78,19 @@ Both respect `.gitignore` by default; add `-u` to search ignored files too.
 - `` Cmd+` `` — global quick terminal over any app.
 - `Cmd+Shift+,` — reload Ghostty config after editing it.
 
+## Clearing — never type `clear` (or `cler`)
+
+- **`Ctrl+L`** — "give me room to think." Clears the visible screen, keeps
+  scrollback and whatever you've typed on the current line. Works in any
+  terminal, over SSH. The one to burn into muscle memory.
+- **`Cmd+K`** — "burn the logs." Ghostty-native clear that wipes scrollback
+  too. Use before a fresh stress-test run so `Cmd+Up` prompt-jumping only
+  walks the new output.
+- **`Ctrl+U`** — clears the current *line* only; typed a mess, nuke it
+  without touching the screen.
+- Often what you wanted from `clear` was "get back to where the output
+  started" — that's `Cmd+Up`, no erasing needed.
+
 ## Maybe later (deliberately not installed)
 
 - **atuin** — synced, SQLite-backed shell history with stats; the next
