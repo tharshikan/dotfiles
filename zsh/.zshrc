@@ -35,6 +35,11 @@ zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 6 )) )'
 
 eval "$(starship init zsh)"
 
+# zoxide — lives in .zshrc (not .zprofile) so nested shells get it too.
+# Plain cd gains jumping: real paths behave normally, keywords teleport.
+eval "$(zoxide init zsh)"
+alias cd=z
+
 
 # Added by Antigravity
 export PATH="/Users/tharshikanshan/.antigravity/antigravity/bin:$PATH"
