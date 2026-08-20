@@ -49,4 +49,33 @@
 # resize-overlay-duration = 4s 200ms
 
 # Light mode theme
-theme = Bluloco Light
+# Theme — follows macOS light/dark mode
+theme = light:Bluloco Light,dark:Bluloco Dark
+
+# Font
+font-family = SFMono Nerd Font
+font-size = 14
+font-thicken = true
+# Ligatures off: literal >= != -> read faster in competitive programming
+font-feature = -liga, -calt
+adjust-cell-height = 8%
+
+# UI
+macos-titlebar-style = tabs
+window-padding-x = 8
+window-padding-y = 6
+window-padding-balance = true
+mouse-hide-while-typing = true
+cursor-style = block
+cursor-style-blink = false
+window-save-state = always
+minimum-contrast = 1.1
+
+# Workflow
+copy-on-select = clipboard
+# ~10MB so long stress-test output survives (default is 512KB)
+scrollback-limit = 10000000
+shell-integration-features = cursor,sudo,title
+
+# Global dropdown terminal from any app
+keybind = global:cmd+grave_accent=toggle_quick_terminal
