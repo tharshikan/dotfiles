@@ -1,0 +1,30 @@
+{
+  "title": "Cmd+tab maps to Ctrl+tab2",
+  "rules": [
+    {
+      "description": "Make Cmd+tab activate Ctrl+tab",
+      "manipulators": [
+     {
+        "type": "basic",
+        "from": {
+            "key_code": "tab",
+            "modifiers": {
+                "mandatory": [
+                    "command"
+                ],
+                "optional": [
+                    "shift"
+                ]
+            }
+        },
+        "to": [
+               {
+                "key_code": "u",
+                "modifiers": ["command"]
+               }
+        ]
+      }
+      ]
+    }
+  ]
+}

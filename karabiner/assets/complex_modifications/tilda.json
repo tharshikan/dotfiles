@@ -1,0 +1,49 @@
+{
+  "title": "Escape+V to tilde3",
+  "maintainers": [
+    "annietma"
+  ],
+  "rules": [
+    {
+      "description": "Escape+V to type tilde (~)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": ["left_shift"]
+            }
+          ]
+        }
+      ]
+    },
+     {
+      "description": "Escape+C to type backtick (`)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

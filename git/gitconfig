@@ -1,0 +1,12 @@
+[user]
+	name = Tharshi
+	email = santhor2008@gmail.com
+[core]
+	excludesfile = /Users/tharshikanshan/.gitignore_global
+	autocrlf = input
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/tharshikanshan/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

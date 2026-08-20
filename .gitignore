@@ -1,1 +1,11 @@
-.idea
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+
+# Karabiner writes these automatically; never track them
+karabiner/automatic_backups/
+
+# Secrets never live in this repo (see zsh/.zshrc -> ~/.zshrc.local)
+*.local

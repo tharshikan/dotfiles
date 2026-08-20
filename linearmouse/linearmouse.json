@@ -1,0 +1,68 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
+  "schemes" : [
+    {
+      "buttons" : {
+        "universalBackForward" : false
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb019",
+          "productName" : "MX Master 2S",
+          "serialNumber" : "916A531850BC80F8",
+          "vendorID" : "0x46d"
+        }
+      },
+      "pointer" : {
+        "acceleration" : "unset",
+        "disableAcceleration" : false,
+        "redirectsToScroll" : false,
+        "speed" : "unset"
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "horizontal" : 5.9,
+          "vertical" : 4.06
+        },
+        "distance" : "auto",
+        "reverse" : {
+          "horizontal" : true,
+          "vertical" : false
+        },
+        "speed" : {
+          "horizontal" : 53.82,
+          "vertical" : 72.11
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0x269",
+          "productName" : "Tharshikan ’s Magic Mouse",
+          "serialNumber" : "0C:E4:41:08:B9:3E",
+          "vendorID" : "0x4c"
+        }
+      },
+      "pointer" : {
+        "speed" : 0.3091
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "trackpad",
+          "productID" : "0x0",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x0"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 0,
+        "disableAcceleration" : true
+      }
+    }
+  ]
+}
