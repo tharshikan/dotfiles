@@ -76,6 +76,8 @@ window-colorspace = display-p3
 bold-is-bright = false
 
 # Workflow
+# Left Option acts as Alt so fzf's Alt-C (cd picker) works; right Option still types ç, é…
+macos-option-as-alt = left
 copy-on-select = clipboard
 # ~10MB so long stress-test output survives (default is 512KB)
 scrollback-limit = 10000000

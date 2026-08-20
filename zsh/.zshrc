@@ -4,6 +4,34 @@
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# fzf: fd as the backend (fast, respects .gitignore), bat previews
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border --color=light'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --preview-window right:55%"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
+export FZF_ALT_C_OPTS="--preview 'eza -1 --color=always {}'"
+# Make **<tab> completion use fd too
+_fzf_compgen_path() { fd --hidden --follow --exclude .git . "$1" }
+_fzf_compgen_dir()  { fd --type d --hidden --follow --exclude .git . "$1" }
+
+# Modern replacements
+alias ls='eza'
+alias ll='eza -l --git --header'
+alias la='eza -la --git --header'
+alias lt='eza --tree --level=2'
+alias cat='bat --paging=never'
+
+# rgf <pattern>: live-search file contents, preview with bat, Enter opens nvim at the line
+rgf() {
+  local sel
+  sel=$(rg --line-number --no-heading --color=always --smart-case "${*:-}" \
+    | fzf --ansi --delimiter : \
+        --preview 'bat --color=always --highlight-line {2} {1}' \
+        --preview-window 'right:55%,+{2}/2') || return
+  nvim "+$(echo "$sel" | cut -d: -f2)" "$(echo "$sel" | cut -d: -f1)"
+}
+
 
 #bindkey
 # function open_chrome() {
