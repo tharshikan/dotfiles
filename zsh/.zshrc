@@ -71,3 +71,12 @@ alias cd=z
 
 # Added by Antigravity
 export PATH="/Users/tharshikanshan/.antigravity/antigravity/bin:$PATH"
+
+# Adv360 Text Nav 2: Ghostty sends ⌥-arrows/⌦ as xterm CSI sequences, which zsh
+# leaves unbound (kitty sent ESC f/b — why these keys worked before the switch).
+# ⌥→⌥⌫ is the keyboard's whole-word delete; these make it land at the prompt.
+# Kept after zsh-autocomplete so nothing rebinds them.
+bindkey '^[[1;3C' forward-word    # ⌥→
+bindkey '^[[1;3D' backward-word   # ⌥←
+bindkey '^[[3~'   delete-char     # ⌦
+bindkey '^[[3;3~' kill-word       # ⌥⌦
